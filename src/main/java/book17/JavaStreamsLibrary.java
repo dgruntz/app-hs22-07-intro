@@ -12,13 +12,13 @@ public class JavaStreamsLibrary {
     public static List<Book> booksByAuthor(String author) {
       return books.stream()
               .filter(b -> b.author().equals(author))
-              .collect(Collectors.toList());
+              .toList();
     }
 
     public static void main(String[] args) {
       List<Book> booksByA = booksByAuthor("A").stream()
                  .sorted(Comparator.comparing(b -> b.author()))
-                 .collect(Collectors.toList());
+                 .toList();
       System.out.print(booksByA);
     }
 }
